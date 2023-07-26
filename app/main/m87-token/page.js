@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import { useContext, useRef, useState } from "react";
 import gsap from 'gsap-trial/dist/gsap';

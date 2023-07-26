@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-nocheck
 import "./globals.css";
 import type { Metadata } from "next";
