@@ -38,28 +38,28 @@ export default function Layers() {
     });
   };
 
-  useIsomorphicLayoutEffect(() => {
-    if (!completed) return;
-    ctx.add(() => {
-      const panels = gsap.utils.toArray(".panel");
-      panels.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top bottom",
-          end: "+=200%",
-          onToggle: (self) =>
-            self.isActive && !scrollTween.current && goToSection(i),
-        });
-      });
+  // useIsomorphicLayoutEffect(() => {
+  //   if (!completed) return;
+  //   ctx.add(() => {
+  //     const panels = gsap.utils.toArray(".panel");
+  //     panels.forEach((panel, i) => {
+  //       ScrollTrigger.create({
+  //         trigger: panel,
+  //         start: "top bottom",
+  //         end: "+=200%",
+  //         onToggle: (self) =>
+  //           self.isActive && !scrollTween.current && goToSection(i),
+  //       });
+  //     });
 
-      ScrollTrigger.create({
-        start: 0,
-        end: "max",
-        snap: 1 / (panels.length - 1),
-      });
-    });
-    return () => ctx.revert();
-  }, [completed]);
+  //     ScrollTrigger.create({
+  //       start: 0,
+  //       end: "max",
+  //       snap: 1 / (panels.length - 1),
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, [completed]);
   return (
     <main ref={main}>
       {/* OpenHatch */}

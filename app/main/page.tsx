@@ -1,5 +1,7 @@
 // @ts-nocheck
+
 "use client";
+
 import { useContext, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -38,28 +40,28 @@ export default function Layers() {
     });
   };
 
-  useIsomorphicLayoutEffect(() => {
-    if (!completed) return;
-    ctx.add(() => {
-      const panels = gsap.utils.toArray(".panel");
-      panels.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top bottom",
-          end: "+=200%",
-          onToggle: (self) =>
-            self.isActive && !scrollTween.current && goToSection(i),
-        });
-      });
+  // useIsomorphicLayoutEffect(() => {
+  //   if (!completed) return;
+  //   ctx.add(() => {
+  //     const panels = gsap.utils.toArray(".panel");
+  //     panels.forEach((panel, i) => {
+  //       ScrollTrigger.create({
+  //         trigger: panel,
+  //         start: "top bottom",
+  //         end: "+=200%",
+  //         onToggle: (self) =>
+  //           self.isActive && !scrollTween.current && goToSection(i),
+  //       });
+  //     });
 
-      ScrollTrigger.create({
-        start: 0,
-        end: "max",
-        snap: 1 / (panels.length - 1),
-      });
-    });
-    return () => ctx.revert();
-  }, [completed]);
+  //     ScrollTrigger.create({
+  //       start: 0,
+  //       end: "max",
+  //       snap: 1 / (panels.length - 1),
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, [completed]);
   return (
     <main className="relative mx-auto max-w-7xl px-6 sm:px-8" ref={main}>
       {/* <aside className=" fixed inset-0 flex flex-col z-30 p-6  gap-10 h-screen mt-60 mb-40">
