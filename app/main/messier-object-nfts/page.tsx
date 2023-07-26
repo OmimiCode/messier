@@ -76,9 +76,12 @@ export default function Layers() {
             <p className="mt-6 text-sm sm:text-lg uppercase text-white/50 ">
               The artwork of the NFTs contains an artistic interpretation
               depicting the astronomer{" "}
-              <span className="text-white ml-2">"Charles Messier"</span> and
-              each NFTs contains one unique Nebula or Star Cluster from the 110
-              <span className="text-white ml-2">"Messier Objects"</span>{" "}
+              <span className="text-white ml-2">
+                &ldquo;Charles Messier&rdquo;
+              </span>{" "}
+              and each NFTs contains one unique Nebula or Star Cluster from the
+              110
+              <span className="text-white ml-2">&ldquo;Messier Objects&rdquo;</span>{" "}
               embedded into their imagery.
             </p>
             <div className="max-w-7xl grid grid-cols-6 gap-6 sm:gap-12 mt-14">
