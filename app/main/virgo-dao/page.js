@@ -1,9 +1,8 @@
-// @ts-nocheck
 "use client";
 import { useContext, useRef, useState } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import gsap from 'gsap-trial/dist/gsap';
+import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap-trial/dist/ScrollToPlugin';
 
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";
@@ -13,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 ScrollTrigger.normalizeScroll(true);
 
-export default function Layers() {
+export default function Virgo() {
   const main = useRef();
   const scrollTween = useRef();
   const [ctx] = useState(gsap.context(() => {}, main));
@@ -62,45 +61,33 @@ export default function Layers() {
   // }, [completed]);
   return (
     <main ref={main}>
-      {/* Messier oBJECT nfts*/}
-
-      <section className="panel relative isolate overflow-hidden bg-black">
-        <div className="mx-auto max-w-7xl justify-end items-end px-6 lg:px-8 pt-32 lg:pb-10 lg:py-80">
+      {/* Virgo DAO */}
+      <section className="panel relative isolate overflow-hidden bg-transparent">
+        <div className="mx-auto max-w-7xl justify-end items-end px-6 lg:px-8 pt-32 lg:pb-10 lg:pt-96">
           <div className="text-end flex flex-col justify-end items-end">
             <Link
-              href="virgo.messier.app/nfts"
-              className=" uppercase text-6xl font-semibold tracking-tight text-white sm:text-9xl"
+              href="http://virgo.messier.app"
+              className="mt-10 text-6xl font-semibold tracking-tight text-white sm:text-9xl"
             >
-              Messier Objects NFTS
+              VirgoDAO
             </Link>
-            <p className="mt-6 text-sm sm:text-lg uppercase text-white/50 ">
-              The artwork of the NFTs contains an artistic interpretation
-              depicting the astronomer{" "}
+            <p className="mt-6 text-lg uppercase text-white/50 ">
+              governed by M87 stakers and run entirely by smart contracts.{" "}
               <span className="text-white ml-2">
-                &ldquo;Charles Messier&rdquo;
-              </span>{" "}
-              and each NFTs contains one unique Nebula or Star Cluster from the
-              110
-              <span className="text-white ml-2">&ldquo;Messier Objects&rdquo;</span>{" "}
-              embedded into their imagery.
+                it is completely trustless.
+              </span>
             </p>
-            <div className="max-w-7xl grid grid-cols-6 gap-6 sm:gap-12 mt-14">
-              <p className="text-xs sm:text-sm uppercase col-span-full sm:col-span-2 text-white  ">
-                You can earn 6.69% of rewards paid out by #VirgoDAO by
-                purchasing one of our 110 NFTs.
-              </p>
-
-              <p className=" text-xs sm:text-sm uppercase col-span-full sm:col-span-2 text-white/50 ">
-                Spend more to get a higher share on the Curve and reap even
-                greater rewards.
-              </p>
-              <p className=" text-xs sm:text-sm uppercase col-span-full sm:col-span-2 text-white ">
-                All M87 tokens used to buy NFTs are burned,ensuring their value
-                rises with the token
+            <div className="max-w-xl">
+              <p className="mt-32 text-xs sm:text-sm uppercase text-white/50  ">
+                Virgo (DAO) is governed by M87 stakers and run entirely by smart
+                contracts. Treasury funds are spent, tokens are purchased, and
+                rewards are distributed using smart contracts. Since there are
+                no middlemen involved with Virgo, it is completely trustless.
               </p>
             </div>
           </div>
         </div>
+        {/* Messier Objects NFTs */}
       </section>
     </main>
   );

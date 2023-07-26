@@ -1,9 +1,8 @@
-// @ts-nocheck
 "use client";
 import { useContext, useRef, useState } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import gsap from 'gsap-trial/dist/gsap';
+import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap-trial/dist/ScrollToPlugin';
 
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";

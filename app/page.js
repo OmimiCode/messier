@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
-  const handleKeyPress = (event: { key: string }) => {
+  const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       router.push("/main");
     }

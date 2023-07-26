@@ -1,9 +1,8 @@
-// @ts-nocheck
 "use client";
 import { useContext, useRef, useState } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import gsap from "gsap-trial/dist/gsap";
+import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap-trial/dist/ScrollToPlugin";
 
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";
@@ -38,28 +37,28 @@ export default function Layers() {
     });
   };
 
-  // useIsomorphicLayoutEffect(() => {
-  //   if (!completed) return;
-  //   ctx.add(() => {
-  //     const panels = gsap.utils.toArray(".panel");
-  //     panels.forEach((panel, i) => {
-  //       ScrollTrigger.create({
-  //         trigger: panel,
-  //         start: "top bottom",
-  //         end: "+=200%",
-  //         onToggle: (self) =>
-  //           self.isActive && !scrollTween.current && goToSection(i),
-  //       });
-  //     });
+  useIsomorphicLayoutEffect(() => {
+    if (!completed) return;
+    ctx.add(() => {
+      const panels = gsap.utils.toArray(".panel");
+      panels.forEach((panel, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top bottom",
+          end: "+=200%",
+          onToggle: (self) =>
+            self.isActive && !scrollTween.current && goToSection(i),
+        });
+      });
 
-  //     ScrollTrigger.create({
-  //       start: 0,
-  //       end: "max",
-  //       snap: 1 / (panels.length - 1),
-  //     });
-  //   });
-  //   return () => ctx.revert();
-  // }, [completed]);
+      ScrollTrigger.create({
+        start: 0,
+        end: "max",
+        snap: 1 / (panels.length - 1),
+      });
+    });
+    return () => ctx.revert();
+  }, [completed]);
   return (
     <main ref={main}>
       {/* ADASTRA */}
@@ -124,8 +123,8 @@ export default function Layers() {
                   exclusively for online businesses. This solution enables
                   merchants to effortlessly accept cryptocurrency payments. When
                   customers make payments with cryptocurrency, the funds are
-                  directly deposited into the merchant&apos;s wallet. It&apos;s a secure
-                  and streamlined process.
+                  directly deposited into the merchant&apos;s wallet. It&apos;s
+                  a secure and streamlined process.
                 </span>
               </p>
             </div>
