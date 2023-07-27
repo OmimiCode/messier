@@ -82,7 +82,7 @@
     const { completed } = useContext(TransitionContext);
 
     const goToSection = (i) => {
-      ctx.data.forEach((e) => {
+      ctx.data.forEach((e) => {``
         if (e.vars && e.vars.id === "scrollTween") {
           e.kill();
         }

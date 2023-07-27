@@ -3,18 +3,20 @@
 import { useContext } from "react";
 import { SwitchTransition, Transition } from "react-transition-group";
 import { usePathname } from "next/navigation";
-import gsap from "gsap/dist/gsap";
+import gsap from "gsap";
 
 import TransitionContext from "@context/TransitionContext";
 
 const TransitionComponent = ({ children }) => {
   const pathname = usePathname();
   const { toggleCompleted } = useContext(TransitionContext);
+
   return (
     <SwitchTransition>
       <Transition
         key={pathname}
         timeout={500}
+        unmountOnExit // Add this line to unmount the component on exit
         onEnter={(node) => {
           toggleCompleted(false);
           gsap.set(node, { autoAlpha: 0, scale: 0.8, xPercent: -100 });
