@@ -3,9 +3,9 @@ import { useContext, useRef, useState } from "react";
 // import { gsap } from "gsap/dist/gsap";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";
 import Link from "next/link";
@@ -40,7 +40,8 @@ export default function Layers() {
   useIsomorphicLayoutEffect(() => {
     if (!completed) return;
     ctx.add(() => {
-      const panels = gsap.utils.toArray(".panel");
+      // const panels = gsap.utils.toArray(".panel");
+      const panels = document.querySelectorAll(".panel");
       panels.forEach((panel, i) => {
         ScrollTrigger.create({
           trigger: panel,
