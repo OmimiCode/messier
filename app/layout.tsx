@@ -46,7 +46,8 @@ export default function RootLayout({
             <DynamicCursor />
             <SideBar />
             <NavBar />
-            <TransitionComponent>{children}</TransitionComponent>
+            {children}
+            {/* <TransitionComponent>{children}</TransitionComponent> */}
             <Footer />
           </TransitionProvider>
         </AppProvider>
