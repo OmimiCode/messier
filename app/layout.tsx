@@ -7,9 +7,12 @@ import SideBar from "@/components/SideBar";
 import { TransitionProvider } from "@context/TransitionContext";
 import { AppProvider } from "@context/AppContext";
 import TransitionComponent from "@components/Transiition";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+// import { gsap } from "gsap/dist/gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import NavBar from "@components/NavBar";
 import Footer from "@components/Footer";
 

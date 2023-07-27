@@ -31,7 +31,7 @@ const pages = [
     url: "/main/adastra",
   },
 ];
-// @ts-ignore
+
 function SideBar() {
   const { menuOpened, toggleMenu } = useContext(AppContext);
   const pathname = usePathname();

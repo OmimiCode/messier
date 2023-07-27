@@ -1,9 +1,11 @@
 "use client";
 import { useContext, useRef, useState } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-
+// import { gsap } from "gsap/dist/gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";
 import Link from "next/link";
