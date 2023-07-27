@@ -1,68 +1,8 @@
-// "use client";
-// import { useContext, useRef, useState } from "react";
-// import gsap from 'gsap-trial/dist/gsap';
-// import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
-// import { ScrollToPlugin } from 'gsap-trial/dist/ScrollToPlugin';
-
-// import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
-// import TransitionContext from "@context/TransitionContext";
-// import Link from "next/link";
-
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// ScrollTrigger.normalizeScroll(true);
-
-// export default function Layers() {
-//   const main = useRef();
-//   const scrollTween = useRef();
-//   const [ctx] = useState(gsap.context(() => {}, main));
-//   const { completed } = useContext(TransitionContext);
-
-//   const goToSection = (i) => {
-//     ctx.data.forEach((e) => {
-//       if (e.vars && e.vars.id === "scrollTween") {
-//         e.kill();
-//       }
-//     });
-//     ctx.add(() => {
-//       scrollTween.current = gsap.to(window, {
-//         scrollTo: { y: i * window.innerHeight, autoKill: false },
-//         duration: 1,
-//         id: "scrollTween",
-//         onComplete: () => (scrollTween.current = null),
-//         overwrite: true,
-//       });
-//     });
-//   };
-
-//   useIsomorphicLayoutEffect(() => {
-//     if (!completed) return;
-//     ctx.add(() => {
-//       const panels = gsap.utils.toArray(".panel");
-//       panels.forEach((panel, i) => {
-//         ScrollTrigger.create({
-//           trigger: panel,
-//           start: "top bottom",
-//           end: "+=200%",
-//           onToggle: (self) =>
-//             self.isActive && !scrollTween.current && goToSection(i),
-//         });
-//       });
-
-//       ScrollTrigger.create({
-//         start: 0,
-//         end: "max",
-//         snap: 1 / (panels.length - 1),
-//       });
-//     });
-//     return () => ctx.revert();
-//   }, [completed]);
-
 "use client";
-import { useContext, useRef, useState, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useContext, useRef, useState } from "react";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
 import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
 import TransitionContext from "@context/TransitionContext";
@@ -70,7 +10,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-ScrollTrigger.defaults({ toggleActions: "play none none none" });
+ScrollTrigger.normalizeScroll(true);
 
 export default function Layers() {
   const main = useRef();
@@ -95,28 +35,88 @@ export default function Layers() {
     });
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!completed) return;
-    const panels = document.querySelectorAll(".panel");
+    ctx.add(() => {
+      const panels = gsap.utils.toArray(".panel");
+      panels.forEach((panel, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top bottom",
+          end: "+=200%",
+          onToggle: (self) =>
+            self.isActive && !scrollTween.current && goToSection(i),
+        });
+      });
 
-    panels.forEach((panel, i) => {
       ScrollTrigger.create({
-        trigger: panel,
-        start: "top bottom",
-        end: "+=200%",
-        onToggle: (self) =>
-          self.isActive && !scrollTween.current && goToSection(i),
+        start: 0,
+        end: "max",
+        snap: 1 / (panels.length - 1),
       });
     });
-
-    ScrollTrigger.create({
-      start: 0,
-      end: "max",
-      snap: 1 / (panels.length - 1),
-    });
-
-    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    return () => ctx.revert();
   }, [completed]);
+
+  // "use client";
+  // import { useContext, useRef, useState, useEffect } from "react";
+  // import gsap from "gsap";
+  // import { ScrollTrigger } from "gsap/ScrollTrigger";
+  // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  // import { useIsomorphicLayoutEffect } from "@lib/helpers/isomorphicEffect";
+  // import TransitionContext from "@context/TransitionContext";
+  // import Link from "next/link";
+
+  // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  // ScrollTrigger.defaults({ toggleActions: "play none none none" });
+
+  // export default function Layers() {
+  //   const main = useRef();
+  //   const scrollTween = useRef();
+  //   const [ctx] = useState(gsap.context(() => {}, main));
+  //   const { completed } = useContext(TransitionContext);
+
+  //   const goToSection = (i) => {
+  //     ctx.data.forEach((e) => {
+  //       if (e.vars && e.vars.id === "scrollTween") {
+  //         e.kill();
+  //       }
+  //     });
+  //     ctx.add(() => {
+  //       scrollTween.current = gsap.to(window, {
+  //         scrollTo: { y: i * window.innerHeight, autoKill: false },
+  //         duration: 1,
+  //         id: "scrollTween",
+  //         onComplete: () => (scrollTween.current = null),
+  //         overwrite: true,
+  //       });
+  //     });
+  //   };
+
+  //   useEffect(() => {
+  //     if (!completed) return;
+  //     const panels = document.querySelectorAll(".panel");
+
+  //     panels.forEach((panel, i) => {
+  //       ScrollTrigger.create({
+  //         trigger: panel,
+  //         start: "top bottom",
+  //         end: "+=200%",
+  //         onToggle: (self) =>
+  //           self.isActive && !scrollTween.current && goToSection(i),
+  //       });
+  //     });
+
+  //     ScrollTrigger.create({
+  //       start: 0,
+  //       end: "max",
+  //       snap: 1 / (panels.length - 1),
+  //     });
+
+  //     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   }, [completed]);
   return (
     <main className="relative mx-auto max-w-7xl px-6 sm:px-8" ref={main}>
       {/* <aside className=" fixed inset-0 flex flex-col z-30 p-6  gap-10 h-screen mt-60 mb-40">

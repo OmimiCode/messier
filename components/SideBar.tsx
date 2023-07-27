@@ -1,8 +1,9 @@
 "use client";
-import { Fragment, useState, useContext } from "react";
+import { Fragment, useState, useEffect, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { AppContext } from "@context/AppContext";
+import { usePathname } from "next/navigation";
 
 const pages = [
   {
@@ -33,6 +34,10 @@ const pages = [
 // @ts-ignore
 function SideBar() {
   const { menuOpened, toggleMenu } = useContext(AppContext);
+  const pathname = usePathname();
+  useEffect(() => {
+    toggleMenu();
+  }, [pathname]);
 
   return (
     <aside className=" fixed top-2 z-50 ml-2 lg:ml-36 ">
@@ -83,7 +88,6 @@ function SideBar() {
                         </div>
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                        {/* Replace with your content */}
                         <div className="absolute inset-0 p-8 sm:px-20 ">
                           <div className="flex justify-around ">
                             <div className="flex flex-col py-4">
@@ -94,7 +98,6 @@ function SideBar() {
                                 {pages.map((page, idx) => (
                                   <li key={idx}>
                                     <Link
-                                      onClick={toggleMenu}
                                       className="text-3xl lg:text-7xl"
                                       href={page.url}
                                     >
@@ -106,7 +109,6 @@ function SideBar() {
                             </div>
                           </div>
                         </div>
-                        {/* /End replace */}
                       </div>
                     </div>
                   </Dialog.Panel>
