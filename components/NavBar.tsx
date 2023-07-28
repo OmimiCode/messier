@@ -7,10 +7,11 @@ import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 import { AppContext } from "@context/AppContext";
 
 export default function NavBar() {
-  const { menuOpened, toggleMenu } = useContext(AppContext);
+  const { menuOpened, toggleMenu, mute, toggleMuteButton } =
+    useContext(AppContext);
   const pathname = usePathname();
   return (
-    <header className="border-b  border-b-white/50 fixed inset-x-0  z-10 w-full">
+    <header className="border-b  border-b-white/20 glassmorphic-w fixed inset-x-0  z-10 w-full">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between py-2 px-6 lg:px-8"
         aria-label="Global"
@@ -18,7 +19,7 @@ export default function NavBar() {
         <div className="flex lg:flex-1">
           <Link
             href="/"
-            className="hidden sm:inline text-white text-base  py-1 px-6 border border-white/50"
+            className="hidden sm:inline text-white text-base  py-1 px-6 border border-white/20"
           >
             HOME
           </Link>
@@ -42,24 +43,31 @@ export default function NavBar() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
           >
             <span className="sr-only">Open main menu</span>
-            <div className="inline text-white text-base  py-2 px-6 border border-white/50">
+            <div className="inline text-white text-base  py-1 px-6 border border-white/20">
               MENU
             </div>
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <h3 className="inline italic uppercase text-white text-base sm:text-2xl py-2 px-10 border border-white/50">
-            {pathname.replaceAll("/", " - ").replace(" - ", "")}
+          <h3 className="inline italic uppercase text-white text-base py-1 px-10 border border-white/20">
+            {pathname !== "/"
+              ? pathname.replaceAll("/", " - ").replace(" - ", "")
+              : "MESSIER ECOSYSTEM"}
           </h3>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <div className="inline text-white text-base  py-2 px-6 border border-white/50">
-            AUDIO
-          </div>
+          <button
+            onClick={toggleMuteButton}
+            className={`${
+              mute && "line-through"
+            } "inline  text-white text-base  py-2 px-6 border border-white/20"`}
+          >
+            {mute ? "UNMUTE" : "MUTE"}
+          </button>
           <button
             type="button"
             onClick={toggleMenu}
-            className="inline text-white text-base  py-2 px-6 border border-white/50"
+            className="inline text-white text-base  py-2 px-6 border border-white/20"
           >
             MENU
           </button>

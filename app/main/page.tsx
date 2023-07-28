@@ -9,6 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import CanvasScroll from "@components/3DScroll";
+import ThemeSound from "@components/ThemeSound";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -61,9 +62,9 @@ function Content({ item }: { item: any }) {
     <section className="section max-w-7xl mx-auto px-6 sm:px-8 snap-y flex items-center justify-center h-screen relative ">
       <div
         ref={ref}
-        className="wrapper relative snap-center w-full h-full overflow-hidden"
+        className="wrapper relative snap-center w-full h-full overflow-hidden flex justify-end items-end"
       >
-        <div className="text-end content absolute px-6 lg:px-8  inset-0 right-0 flex flex-col justify-end items-end">
+        <div className="text-end absolute p-6 lg:p-8 inset-y-0 right-0 flex flex-col justify-center items-end max-w-xl glassmorphic-w">
           <Link
             href="http://virgo.messier.app"
             className="mt-10 text-2xl font-semibold tracking-tight text-white sm:text-5xl"
@@ -144,6 +145,8 @@ export default function Layers() {
           <span className=" mr-2">01</span> - ADASTRA
         </Link>
       </aside> */}
+
+      <ThemeSound />
     </main>
   );
 }

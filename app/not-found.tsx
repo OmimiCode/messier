@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 import {
   motion,
@@ -73,15 +74,13 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
-export default function VelocityScroll() {
+export default function NOTFOUND() {
   return (
     <section className="relative py-32 lg:py-40 grid grid-cols-1 gap-10">
-      <ParallaxText baseVelocity={-5}> MESSIER ☄️ ECOSYSTEM 🪐</ParallaxText>
-      <ParallaxText baseVelocity={5}>
-        💫 YOUR 🌕 EXPLORATION 🌑 STARTS ✨ HERE
-      </ParallaxText>
+      <ParallaxText baseVelocity={-5}> 404☄️ 404 🪐</ParallaxText>
+      <ParallaxText baseVelocity={5}>GO HOME 💫 OPPS! 🪐 </ParallaxText>
       <ParallaxText baseVelocity={-5}>
-        💫 YOUR 🌕 EXPLORATION 🌑 STARTS ✨ HERE
+        💫 YOU🌕 ARE 🌑 APPROACHING ✨ A 🪐 BLACK HOLE
       </ParallaxText>
     </section>
   );

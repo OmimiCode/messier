@@ -8,6 +8,7 @@ import { AppProvider } from "@context/AppContext";
 
 import NavBar from "@components/NavBar";
 import Footer from "@components/Footer";
+import ThemeSound from "@components/ThemeSound";
 
 const DynamicCursor = dynamic(
   () => import("../components/cursor/AnimatedCursor"),
@@ -33,10 +34,14 @@ export default function RootLayout({
     <html lang="en" className="bg-black">
       <body className={raleway.className}>
         <AppProvider>
+          {/* artifacts --start */}
           <DynamicCursor />
+          {/* <ThemeSound /> */}
+          {/* artifacts --end */}
           <SideBar />
           <NavBar />
           {children}
+
           <Footer />
         </AppProvider>
       </body>
