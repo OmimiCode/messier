@@ -102,7 +102,9 @@ export default function Layers() {
 
       <motion.div className="progress" style={{ scaleX }} />
       {contents.map((item, idx) => (
-        <Content item={item} />
+        <div key={idx}>
+          <Content item={item} />
+        </div>
       ))}
       {/* <aside className=" fixed inset-0 flex flex-col z-30 p-6  gap-10 h-screen mt-60 mb-40">
         <Link
