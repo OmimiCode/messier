@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,9 +24,20 @@
       }
     ],
     "paths": {
-      "@*": ["./*"]
+      "@*": [
+        "./*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/helpers/isomorphicEffect.js", "app/main/page.js", "components/Transiition.js", "app/page.js", "app/not-found.js", "app/main/adastra/page.js", "app/main/horizon/page.js", "app/main/m87-token/page.js", "app/main/messier-object-nfts/page.js", "app/main/open-hatch/page.js", "app/main/virgo-dao/page.jsx", "app/main/page.jsx", "app/main/page.jsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "lib/helpers/isomorphicEffect.js",
+    "app/main/page.tsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

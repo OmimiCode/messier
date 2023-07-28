@@ -5,10 +5,10 @@
 
 .glassmorphic-w {
   /* From https://css.glass */
-  background: rgba(24, 24, 24, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(9, 9, 9, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.025);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(5px);
 }
 
@@ -32,8 +32,6 @@ body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-  font-family: "Signika Negative", sans-serif, Arial;
 }
 
 .panel {
@@ -44,6 +42,46 @@ body {
 }
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+/* .panel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box
+} */
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 2px;
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  -webkit-border-radius: 1ex;
+  height: 2px;
+
+}
+
+::-webkit-scrollbar-corner {
+  background: white;
+}
 
 body {
   overflow-x: hidden;
@@ -58,32 +96,76 @@ body {
 }
 
 .section {
+  scroll-snap-align: center;
+  perspective: 500px;
+}
+
+.wrapper {
+  height: 400px;
+}
+
+
+.content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
-.box {
-  background-color: "#fff";
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  font-size: 24px;
-  text-align: center;
-  line-height: 100px;
+.progress {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: white;
+  bottom: 100px;
 }
 
-.zoom-in-out-box {
-  animation: zoom-in-zoom-out 10s ease infinite;
+
+
+
+
+
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-@keyframes zoom-in-zoom-out {
-  0% {
-    transform: scale(0.5, 0.5);
-  }
-  50% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(0.5, 0.5);
-  }
+.parallax .scroller {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 250px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
+
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
 }

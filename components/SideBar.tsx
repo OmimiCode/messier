@@ -35,9 +35,6 @@ const pages = [
 function SideBar() {
   const { menuOpened, toggleMenu } = useContext(AppContext);
   const pathname = usePathname();
-  useEffect(() => {
-    toggleMenu();
-  }, [pathname]);
 
   return (
     <aside className=" fixed top-2 z-50 ml-2 lg:ml-36 ">
@@ -100,6 +97,7 @@ function SideBar() {
                                     <Link
                                       className="text-3xl lg:text-7xl"
                                       href={page.url}
+                                      onClick={toggleMenu}
                                     >
                                       {page.name}
                                     </Link>
