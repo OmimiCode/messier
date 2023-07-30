@@ -60,10 +60,11 @@ const contents = [
     link: "main/adastra",
   },
 ];
+
 function Content({ item }: { item: any }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 1000);
+  const y = useParallax(scrollYProgress, 500);
 
   return (
     <section
@@ -74,8 +75,20 @@ function Content({ item }: { item: any }) {
         ref={ref}
         className="wrapper relative snap-center w-full h-full overflow-hidden flex justify-end items-end"
       >
-        <div
+        <motion.div
           // id={item?.id}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 100,
+              restDelta: 0.001,
+            },
+          }}
           className="text-end absolute p-6 lg:p-8 inset-y-0 right-0 flex flex-col justify-center items-end max-w-xl glassmorphic-w"
         >
           <Link
@@ -96,7 +109,7 @@ function Content({ item }: { item: any }) {
           >
             Explore
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -108,17 +121,18 @@ export default function Layers() {
     damping: 30,
     restDelta: 0.001,
   });
+
   return (
     <main className="relative mx-auto max-w-7xl px-6 sm:px-8">
       <div className=" fixed inset-y-0 inset-x-0">
         <CanvasScroll />
       </div>
 
-      <div className="animate-bounce fixed  glassmorphic-w p-4 right-20 bottom-20 flex space-y-2 flex-col justify-between items-center bg-white rounded-full ">
+      <button className="animate-bounce fixed glassmorphic-w p-4 right-10 bottom-10 sm:right-20 sm:bottom-20 flex space-y-2 flex-col justify-between items-center bg-white rounded-full ">
         <ChevronUpIcon className="w-6 h-6  text-white " />
         <div className="w-2 h-2  ring right-1 ring-white rounded-full" />
         <ChevronDownIcon className="w-6 h-6 text-white " />
-      </div>
+      </button>
 
       <motion.div className="progress" style={{ scaleX }} />
       {contents.map((item, idx) => (
