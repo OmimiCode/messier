@@ -12,7 +12,7 @@ import { wrap } from "@motionone/utils";
 import Image from "next/image";
 import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 interface ParallaxProps {
-  children: string;
+  children: any;
   baseVelocity: number;
 }
 
