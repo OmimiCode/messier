@@ -35,7 +35,7 @@ export default function RootLayout({
           <DynamicCursor />
           {/* artifacts --end */}
           <SideBar />
-          <Outlet children={children} />
+          <Outlet>{children}</Outlet>
         </AppProvider>
       </body>
     </html>
