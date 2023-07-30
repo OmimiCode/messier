@@ -32,6 +32,7 @@ body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
+  /* cursor: grab; */
 }
 
 .panel {
@@ -128,16 +129,6 @@ body {
   letter-spacing: -2px;
   line-height: 0.8;
   margin: 0;
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.parallax .scroller {
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 250px;
-  display: flex;
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;

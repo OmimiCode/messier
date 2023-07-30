@@ -8,27 +8,27 @@ import { usePathname } from "next/navigation";
 const pages = [
   {
     name: "VIRGODAO",
-    url: "/main/virgo-dao",
+    url: "/main/#virgo-dao",
   },
   {
     name: "MESSIER OBJECTS NFTS",
-    url: "/main/messier-object-nfts",
+    url: "/main/#objects-nfts",
   },
   {
     name: "M87 TOKEN",
-    url: "/main/m87-token",
+    url: "/main/#m87-token",
   },
   {
     name: "OPENHATCH",
-    url: "/main/open-hatch",
+    url: "/main/#open-hatch",
   },
   {
     name: "HORIZON",
-    url: "/main/horizon",
+    url: "/main/#horizon",
   },
   {
     name: "ADASTRA",
-    url: "/main/adastra",
+    url: "/main/#adastra",
   },
 ];
 

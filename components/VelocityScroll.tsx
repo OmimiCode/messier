@@ -9,7 +9,8 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-
+import Image from "next/image";
+import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 interface ParallaxProps {
   children: string;
   baseVelocity: number;
@@ -62,12 +63,15 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    */
   return (
     <div className="parallax">
-      <motion.div className="scroller" style={{ x }}>
-        <span className="text-white/50 ">{children} </span>
-        <span className="text-white/50 ">{children} </span>
-        <span className="text-white/50 ">{children} </span>
-        <span className="text-white/50 ">{children} </span>
-        <span className="text-white/50 ">{children} </span>
+      <motion.div
+        className="text-[250px] font-black text-white/50 uppercase items-center gap-x-20 flex justify-between flex-nowrap whitespace-nowrap"
+        style={{ x }}
+      >
+        {children}
+        {children}
+        {children}
+        {/* <span className="text-white/50 ">{children} </span> */}
+        {/* <span className="text-white/50 ">{children} </span> */}
       </motion.div>
     </div>
   );
@@ -75,13 +79,100 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function VelocityScroll() {
   return (
-    <section className="relative py-32 lg:py-40 grid grid-cols-1 gap-10">
-      <ParallaxText baseVelocity={-5}> MESSIER ☄️ ECOSYSTEM 🪐</ParallaxText>
+    <section className="relative py-32 lg:py-40 grid grid-cols-1 gap-12">
+      <ParallaxText baseVelocity={-10}>
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        THE{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        MESSIER{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        ECOSYSTEM{" "}
+      </ParallaxText>
       <ParallaxText baseVelocity={5}>
-        💫 YOUR 🌕 EXPLORATION 🌑 STARTS ✨ HERE
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        YOUR{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        EXPLORATION{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        STARTS{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        HERE
       </ParallaxText>
       <ParallaxText baseVelocity={-5}>
-        💫 YOUR 🌕 EXPLORATION 🌑 STARTS ✨ HERE
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        UNIVERSE{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        AWAITS{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        YOU!{" "}
+        <Image
+          src={messier_logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-auto h-full inline"
+        />{" "}
+        THE
       </ParallaxText>
     </section>
   );

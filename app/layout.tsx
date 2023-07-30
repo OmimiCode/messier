@@ -5,10 +5,7 @@ import { Raleway } from "next/font/google";
 import dynamic from "next/dynamic";
 import SideBar from "@/components/SideBar";
 import { AppProvider } from "@context/AppContext";
-
-import NavBar from "@components/NavBar";
-import Footer from "@components/Footer";
-import ThemeSound from "@components/ThemeSound";
+import Outlet from "@components/Outlet";
 
 const DynamicCursor = dynamic(
   () => import("../components/cursor/AnimatedCursor"),
@@ -36,13 +33,9 @@ export default function RootLayout({
         <AppProvider>
           {/* artifacts --start */}
           <DynamicCursor />
-          {/* <ThemeSound /> */}
           {/* artifacts --end */}
           <SideBar />
-          <NavBar />
-          {children}
-
-          <Footer />
+          <Outlet children={children} />
         </AppProvider>
       </body>
     </html>

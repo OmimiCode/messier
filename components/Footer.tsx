@@ -8,7 +8,11 @@ export default function Footer() {
     <footer className="hidden sm:inline fixed bottom-0 inset-x-0  z-10">
       <div className="mx-auto max-w-7xl pb-2 flex-col md:flex-row md:flex md:items-end md:justify-between lg:px-8">
         <div className="mt-2 md:mt-0 flex flex-col items-center sm:items-start">
-          <div className={`${pathname.startsWith("/main") && "opacity-20"} mb-2 flex justify-center items-center`}>
+          <div
+            className={`${
+              pathname.startsWith("/main") && "opacity-20"
+            } mb-2 flex justify-center items-center`}
+          >
             <Image
               src={messier_logo}
               alt="logo"
@@ -26,8 +30,9 @@ export default function Footer() {
         </div>
         <div className={` flex lg:flex-1 justify-center lg:justify-end gap-5`}>
           {pathname.startsWith("/main") ? (
-            <div className="inline text-white/50 text-base   ">SCROLL</div>
+            <></>
           ) : (
+            // <div className="inline text-white/50 text-base   ">SCROLL</div>
             <>
               {" "}
               <div className="inline text-white text-base ">

@@ -39,7 +39,7 @@ export default function Home() {
               onClick={() => {
                 router.push("/main");
               }}
-              className=" text-white/50  sm:hover:bg-white sm:hover:text-black text-center mt-6 text-xs uppercase border py-4 border-white/50 text-gray-300 w-full sm:w-2/5 "
+              className=" text-black animate-ping hover:animate-none bg-white sm:hover:bg-transparent sm:hover:text-white text-center mt-6 text-xs uppercase border py-4 border-white/50  w-full sm:w-2/5 "
             >
               click enter to START
             </button>
