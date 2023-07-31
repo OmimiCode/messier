@@ -23,6 +23,8 @@ const contents = [
     caption:
       "VIRGO (DAO) IS GOVERNED BY M87 STAKERS AND RUN ENTIRELY BY SMART CONTRACTS. TREASURY FUNDS ARE SPENT, TOKENS ARE PURCHASED, AND REWARDS ARE DISTRIBUTED USING SMART CONTRACTS. SINCE THERE ARE NO MIDDLEMEN INVOLVED WITH VIRGO, IT IS COMPLETELY TRUSTLESS.",
     link: "main/virgo-dao",
+    launch: "https://virgo.messier.app",
+    action: "Launch Virgo",
   },
   {
     id: "objects-nfts",
@@ -30,6 +32,8 @@ const contents = [
     caption:
       "THE ARTWORK OF THE NFTS CONTAINS AN ARTISTIC INTERPRETATION DEPICTING THE ASTRONOMER “CHARLES MESSIER” AND EACH NFTS CONTAINS ONE UNIQUE NEBULA OR STAR CLUSTER FROM THE 110“MESSIER OBJECTS” EMBEDDED INTO THEIR IMAGERY.",
     link: "main/messier-object-nfts",
+    launch: "https://virgo.messier.app/nfts",
+    action: "Launch NFT Platform",
   },
   {
     id: "m87-token",
@@ -37,6 +41,8 @@ const contents = [
     caption:
       "M87 IS THE ECOSYSTEM TOKEN THAT CAN BE TRADED IN THE OPEN MARKET, STAKED IN VIRGO TO EARN PASSIVE INCOME REWARDS, OR USED TO BID ON THE“MESSIER OBJECTS NFTS",
     link: "main/m87-token",
+    launch: "",
+    action: "Buy M87",
   },
   {
     id: "open-hatch",
@@ -44,6 +50,8 @@ const contents = [
     caption:
       "OPEN HATCH CAN BE USED FOR PEER-TO-PEER TRANSACTIONS, FUNDRAISING, OR TRADING AND SERVICES. THE EXPLORER PLATFORM WITHIN OPEN HATCH EMERGES AS A SOCIAL MEDIA DAPP THAT CAN BE USED FOR CONNECTING WITH LIKE-MINDED INDIVIDUALS, SHARING CONTENT, AND CREATING ONLINE COMMUNITIES.",
     link: "main/open-hatch",
+    launch: "https://openhatch.messier.app",
+    action: "Launch dApp",
   },
   {
     id: "horizon",
@@ -51,6 +59,8 @@ const contents = [
     caption:
       "A PRIVACY APPLICATION THAT ENABLES USERS TO DEPOSIT AND WITHDRAW CRYPTOCURRENCY WHILE MAINTAINING THEIR ANONYMITY. USERS ARE GIVEN THE CHOICE TO DISSOCIATE THEMSELVES FROM AN ANONYMITY SET THAT MAY INCLUDE STOLEN OR LAUNDERED FUNDS WHILE PRESERVING USER PRIVACY.",
     link: "main/horizon",
+    launch: "https://horizon.messier.app",
+    action: "Launch dApp",
   },
   {
     id: "adastra",
@@ -58,6 +68,8 @@ const contents = [
     caption:
       "FACILITATE SECURE AND PRIVATE TRANSACTIONS USING CRYPTOCURRENCYSPEED, SECURITY, AND PRIVACY.",
     link: "main/adastra",
+    launch: "",
+    action: "Get Adastra on Google Play",
   },
 ];
 
@@ -92,7 +104,7 @@ function Content({ item }: { item: any }) {
           className="text-end absolute p-6 lg:p-8 inset-y-0 right-0 flex flex-col justify-center items-end max-w-xl glassmorphic-w"
         >
           <Link
-            href="http://virgo.messier.app"
+            href={item?.link}
             className="mt-10 text-2xl font-semibold tracking-tight text-white sm:text-5xl"
           >
             {item?.title}
@@ -103,12 +115,20 @@ function Content({ item }: { item: any }) {
               {item?.caption}
             </p>
           </motion.div>
-          <Link
-            href={item?.link}
-            className="mt-6 underline text-lg font-normal tracking-wide text-white sm:text-xl"
-          >
-            Explore
-          </Link>
+          <div className="mt-6 flex flex-col sm:flex-row items-end sm:items-center text-left sm:text-center sm:justify-center justify-end gap-5 sm:gap-7">
+            <Link
+              href={item?.launch}
+              className=" text-black font-normal tracking-wide rounded-full bg-white sm:hover:bg-transparent sm:hover:text-white text-center text-lg sm:text-xl border py-2 px-4 border-white/50"
+            >
+              {item?.action}
+            </Link>
+            <Link
+              href={item?.link}
+              className=" underline font-normal tracking-wide text-white text-lg sm:text-xl  py-2 px-4"
+            >
+              Explore
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

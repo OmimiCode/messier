@@ -4,13 +4,13 @@ import React, { useContext, useEffect, useRef } from "react";
 
 export default function ThemeSound() {
   const videoRef = useRef(null);
-  const videoId = "FZbdPB0eyZc";
   const { mute } = useContext(AppContext);
 
   useEffect(() => {
     if (videoRef.current) {
       // @ts-ignore
-      videoRef.current.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=4`;
+      videoRef.current.src =
+        "https://www.youtube.com/embed/nogybXeoqrw?si=tF7dYhtJMPFeIkwW&amp;start=10";
     }
     return () => {
       if (videoRef.current) {
