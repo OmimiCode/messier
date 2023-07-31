@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import { useRef } from "react";
 import {
   motion,
@@ -11,7 +12,12 @@ import {
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import CanvasScroll from "@components/3DScroll";
 import ThemeSound from "@components/ThemeSound";
-
+import Image from "next/image";
+import adastra_logo from "@assets/messier-logo-pack/ADASTRA Logo W.png";
+import openhatch_logo from "@assets/messier-logo-pack/OPEN HATCH.png";
+import horizon_logo from "@assets/messier-logo-pack/HORIZON.png";
+import virgodao_logo from "@assets/messier-logo-pack/VIRGO.png";
+import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
@@ -25,6 +31,7 @@ const contents = [
     link: "main/virgo-dao",
     launch: "https://virgo.messier.app",
     action: "Launch Virgo",
+    logo: virgodao_logo,
   },
   {
     id: "objects-nfts",
@@ -34,6 +41,7 @@ const contents = [
     link: "main/messier-object-nfts",
     launch: "https://virgo.messier.app/nfts",
     action: "Launch NFT Platform",
+    logo: messier_logo,
   },
   {
     id: "m87-token",
@@ -43,6 +51,7 @@ const contents = [
     link: "main/m87-token",
     launch: "",
     action: "Buy M87",
+    logo: messier_logo,
   },
   {
     id: "open-hatch",
@@ -52,6 +61,7 @@ const contents = [
     link: "main/open-hatch",
     launch: "https://openhatch.messier.app",
     action: "Launch dApp",
+    logo: openhatch_logo,
   },
   {
     id: "horizon",
@@ -61,6 +71,7 @@ const contents = [
     link: "main/horizon",
     launch: "https://horizon.messier.app",
     action: "Launch dApp",
+    logo: horizon_logo,
   },
   {
     id: "adastra",
@@ -69,7 +80,8 @@ const contents = [
       "FACILITATE SECURE AND PRIVATE TRANSACTIONS USING CRYPTOCURRENCYSPEED, SECURITY, AND PRIVACY.",
     link: "main/adastra",
     launch: "",
-    action: "Get Adastra on Google Play",
+    action: "Get on Google Play",
+    logo: adastra_logo,
   },
 ];
 
@@ -85,7 +97,7 @@ function Content({ item }: { item: any }) {
     >
       <div
         ref={ref}
-        className="wrapper relative snap-center w-full h-full overflow-hidden flex justify-end items-end"
+        className="h-[450px] relative snap-center w-full overflow-hidden flex justify-end items-end"
       >
         <motion.div
           // id={item?.id}
@@ -103,19 +115,31 @@ function Content({ item }: { item: any }) {
           }}
           className="text-end absolute p-6 lg:p-8 inset-y-0 right-0 flex flex-col justify-center items-end max-w-xl glassmorphic-w"
         >
+          <Image
+            src={item?.logo}
+            alt="logo"
+            width={500}
+            height={500}
+            className="w-20 sm:w-32 h-20 sm:h-32 object-contain aspect-square"
+          />
           <Link
             href={item?.link}
-            className="mt-10 text-2xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="mt-2 sm:mt-6 text-2xl font-semibold tracking-tight text-white sm:text-5xl"
           >
             {item?.title}
           </Link>
           {/* @ts-ignore */}
-          <motion.div style={{ y }} className="max-w-xl">
+          <motion.div style={{ y }} className="max-w-xl hidden sm:block ">
             <p className="mt-6 text-xs sm:text-sm uppercase text-white/50  ">
               {item?.caption}
             </p>
           </motion.div>
-          <div className="mt-6 flex flex-col sm:flex-row items-end sm:items-center text-left sm:text-center sm:justify-center justify-end gap-5 sm:gap-7">
+          <div className="max-w-xl sm:hidden block ">
+            <p className="mt-6 text-xs sm:text-sm uppercase text-white/50  ">
+              {item?.caption}
+            </p>
+          </div>
+          <div className="mt-6 flex flex-col sm:flex-row items-end sm:items-center text-left sm:text-center sm:justify-center justify-end gap-3 sm:gap-7">
             <Link
               href={item?.launch}
               className=" text-black font-normal tracking-wide rounded-full bg-white sm:hover:bg-transparent sm:hover:text-white text-center text-lg sm:text-xl border py-2 px-4 border-white/50"
@@ -124,7 +148,7 @@ function Content({ item }: { item: any }) {
             </Link>
             <Link
               href={item?.link}
-              className=" underline font-normal tracking-wide text-white text-lg sm:text-xl  py-2 px-4"
+              className=" underline font-normal sm:tracking-wide text-white text-base sm:text-xl  py-2 px-4"
             >
               Explore
             </Link>

@@ -14,7 +14,7 @@ function Outlet({ children }: { children: React.ReactNode }) {
     }, 20);
   }, [loader]);
   return (
-    <div className="dark:bg-black bg-white">
+    <div className="bg-black">
       {isCompleted ? (
         <div className="relative">
           <NavBar />

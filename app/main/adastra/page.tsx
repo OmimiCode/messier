@@ -1,10 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
+import adastra_logo from "@assets/messier-logo-pack/ADASTRA Logo W.png";
 export default function Layers() {
   return (
     <main>
       {/* ADASTRA */}
-      <section className="panel relative isolate overflow-hidden bg-black">
-        <div className="mx-auto max-w-7xl justify-end items-end px-6 lg:px-8 pt-32 lg:pb-10 lg:py-30">
+      <section className="relative isolate overflow-hidden min-h-screen bg-black">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+          <Image
+            src={adastra_logo}
+            alt="logo"
+            width={1000}
+            height={1000}
+            className="w-screen h-screen object-contain aspect-square"
+          />
+        </div>
+        <div className=" z-20 mx-auto max-w-7xl justify-end items-end px-6 lg:px-8 pt-32 lg:pb-10 lg:py-30">
           <div className="text-end flex flex-col justify-end items-end">
             <Link
               href="virgo.messier.app/nfts"
