@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import {
   motion,
   useScroll,
@@ -11,13 +11,13 @@ import {
 } from "framer-motion";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import CanvasScroll from "@components/3DScroll";
-import ThemeSound from "@components/ThemeSound";
 import Image from "next/image";
 import adastra_logo from "@assets/messier-logo-pack/ADASTRA Logo W.png";
 import openhatch_logo from "@assets/messier-logo-pack/OPEN HATCH.png";
 import horizon_logo from "@assets/messier-logo-pack/HORIZON.png";
 import virgodao_logo from "@assets/messier-logo-pack/VIRGO.png";
 import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
+import { AppContext } from "@context/AppContext";
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
@@ -86,6 +86,7 @@ const contents = [
 ];
 
 function Content({ item }: { item: any }) {
+  const { playClick } = useContext(AppContext);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 500);
@@ -141,12 +142,14 @@ function Content({ item }: { item: any }) {
           </div>
           <div className="mt-6 flex flex-col sm:flex-row items-end sm:items-center text-left sm:text-center sm:justify-center justify-end gap-3 sm:gap-7">
             <Link
+              onClick={playClick}
               href={item?.launch}
               className=" text-black font-normal tracking-wide rounded-full bg-white sm:hover:bg-transparent sm:hover:text-white text-center text-lg sm:text-xl border py-2 px-4 border-white/50"
             >
               {item?.action}
             </Link>
             <Link
+              onClick={playClick}
               href={item?.link}
               className=" underline font-normal sm:tracking-wide text-white text-base sm:text-xl  py-2 px-4"
             >

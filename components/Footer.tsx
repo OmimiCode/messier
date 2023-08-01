@@ -4,7 +4,11 @@ import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { AppContext } from "@context/AppContext";
+import { useContext } from "react";
+
 export default function Footer() {
+  const { playClick } = useContext(AppContext);
   const pathname = usePathname();
   return (
     <footer className="inline fixed bottom-0 inset-x-0  z-10">
@@ -32,19 +36,32 @@ export default function Footer() {
         </div>
         <div className={` flex lg:flex-1 justify-center lg:justify-end gap-6`}>
           <Link
+            onClick={playClick}
             href="https://messier.gitbook.io/)"
             className="inline text-white text-base "
           >
             CATALOGUE
           </Link>
           <div className=" text-white text-base flex space-x-4 items-center ">
-            <Link href="https://twitter.com/MessierM87" className=" inline">
+            <Link
+              onClick={playClick}
+              href="https://twitter.com/MessierM87"
+              className=" inline"
+            >
               TW <ArrowTopRightOnSquareIcon className="w-5 h-5 inline" />
             </Link>
-            <Link href="https://t.me/MessierM87Community" className=" inline">
+            <Link
+              onClick={playClick}
+              href="https://t.me/MessierM87Community"
+              className=" inline"
+            >
               TG <ArrowTopRightOnSquareIcon className="w-5 h-5 inline" />
             </Link>
-            <Link href="https://discord.gg/messierm87" className="inline">
+            <Link
+              onClick={playClick}
+              href="https://discord.gg/messierm87"
+              className="inline"
+            >
               DC <ArrowTopRightOnSquareIcon className="w-5 h-5 inline" />
             </Link>
           </div>

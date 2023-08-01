@@ -1,10 +1,12 @@
 "use client";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import VelocityScroll from "@components/VelocityScroll";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AppContext } from "@context/AppContext";
 export default function Home() {
+  const { playClick } = useContext(AppContext);
   const router = useRouter();
   // @ts-ignore
   const handleKeyPress = (event) => {
@@ -52,6 +54,7 @@ export default function Home() {
           <div className="mt-10">
             <Link
               href="/main"
+              onClick={playClick}
               className="rounded-full text-black font-semibold bg-white sm:hover:bg-transparent sm:hover:text-white text-center mt-6 text-base uppercase border p-4 border-white/50  w-full sm:w-2/5 "
             >
               click enter to START

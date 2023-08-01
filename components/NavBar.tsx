@@ -7,7 +7,7 @@ import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 import { AppContext } from "@context/AppContext";
 
 export default function NavBar() {
-  const {toggleMenu, mute, toggleMuteButton } =
+  const { toggleMenu, mute, toggleMuteButton, playClick } =
     useContext(AppContext);
   const pathname = usePathname();
   return (
@@ -18,12 +18,17 @@ export default function NavBar() {
       >
         <div className="flex lg:flex-1">
           <Link
+            onClick={playClick}
             href="/"
             className="hidden sm:inline text-white text-base  py-1 px-6 border border-white/20"
           >
             HOME
           </Link>
-          <Link href="/" className="mb-2 flex sm:hidden items-center space-x-2">
+          <Link
+            onClick={playClick}
+            href="/"
+            className="mb-2 flex sm:hidden items-center space-x-2"
+          >
             <Image
               src={messier_logo}
               alt="logo"
@@ -57,7 +62,9 @@ export default function NavBar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button
-            onClick={toggleMuteButton}
+            onClick={() => {
+              toggleMuteButton();
+            }}
             className={`${
               mute && "line-through"
             } "inline  text-white text-base  py-2 px-6 border border-white/20"`}
