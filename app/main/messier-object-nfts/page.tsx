@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png"
+import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 
 export default function Layers() {
   return (
@@ -8,7 +8,7 @@ export default function Layers() {
       {/* Messier oBJECT nfts*/}
 
       <section className=" relative isolate overflow-hidden min-h-screen bg-black">
-      <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
           <Image
             src={messier_logo}
             alt="logo"
@@ -56,6 +56,13 @@ export default function Layers() {
           </div>
         </div>
       </section>
+      <audio controls autoPlay className="hidden">
+        <source
+          src="https://testenv-virgo.messier.app/file/sound.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
     </main>
   );
 }

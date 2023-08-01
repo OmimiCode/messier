@@ -6,9 +6,13 @@ import dynamic from "next/dynamic";
 import SideBar from "@/components/SideBar";
 import { AppProvider } from "@context/AppContext";
 import Outlet from "@components/Outlet";
+import ThemeSound from "@components/ThemeSound";
 
+// const DynamicSound = dynamic(() => import("@components/ThemeSound"), {
+//   ssr: false,
+// });
 const DynamicCursor = dynamic(
-  () => import("../components/cursor/AnimatedCursor"),
+  () => import("@components/cursor/AnimatedCursor"),
   {
     ssr: false,
   }
@@ -33,6 +37,7 @@ export default function RootLayout({
         <AppProvider>
           {/* artifacts --start */}
           <DynamicCursor />
+          <ThemeSound />
           {/* artifacts --end */}
           <SideBar />
           <Outlet>{children}</Outlet>

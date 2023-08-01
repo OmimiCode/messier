@@ -1,35 +1,57 @@
+// @ts nocheck
 "use client";
-import { AppContext } from "@context/AppContext";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 export default function ThemeSound() {
-  // const videoRef = useRef(null);
-  // const { mute } = useContext(AppContext);
+  const audioRef = useRef(null);
 
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     // @ts-ignore
-  //     videoRef.current.src =
-  //       "https://www.youtube.com/embed/nogybXeoqrw?si=tF7dYhtJMPFeIkwW&start=10";
-  //   }
-  //   return () => {
-  //     if (videoRef.current) {
-  //       // @ts-ignore
-  //       videoRef.current.src = "";
-  //     }
-  //   };
-  // }, [mute]);
+  useEffect(() => {
+    // Get all the clickable elements using querySelectorAll
+    const buttons = document.querySelectorAll("button");
+    const links = document.querySelectorAll("a");
+
+    // Attach click event listeners to each button and link
+    buttons.forEach((button) => {
+      button.addEventListener("click", handleButtonClick);
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", handleLinkClick);
+    });
+
+    // Cleanup function to remove the event listeners when the component unmounts
+    return () => {
+      buttons.forEach((button) => {
+        button.removeEventListener("click", handleButtonClick);
+      });
+
+      links.forEach((link) => {
+        link.removeEventListener("click", handleLinkClick);
+      });
+    };
+  }, []);
+  const playAudio = () => {
+    // @ts-ignore
+    audioRef?.current?.play();
+  };
+
+  const handleButtonClick = () => {
+    playAudio();
+  };
+
+  const handleLinkClick = () => {
+    playAudio();
+  };
 
   return (
-    <iframe
-      // ref={videoRef}
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/nogybXeoqrw?si=tF7dYhtJMPFeIkwW&start=10"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="hidden"
-    ></iframe>
+    <>
+      <audio ref={audioRef} controls className="hidden" >
+        <source
+          src="https://testenv-virgo.messier.app/file/click.mp3"
+          // type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+    </>
   );
 }

@@ -7,7 +7,7 @@ import messier_logo from "@assets/messier-logo-pack/MESSIER 1.png";
 import { AppContext } from "@context/AppContext";
 
 export default function NavBar() {
-  const { menuOpened, toggleMenu, mute, toggleMuteButton } =
+  const {toggleMenu, mute, toggleMuteButton } =
     useContext(AppContext);
   const pathname = usePathname();
   return (

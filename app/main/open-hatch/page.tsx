@@ -39,6 +39,13 @@ export default function Layers() {
           </div>
         </div>
       </section>
+      <audio controls autoPlay>
+        <source
+          src="https://testenv-virgo.messier.app/file/sound.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
     </main>
   );
 }

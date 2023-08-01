@@ -184,46 +184,13 @@ export default function Layers() {
           <Content item={item} />
         </div>
       ))}
-      {/* <aside className=" fixed inset-0 flex flex-col z-30 p-6  gap-10 h-screen mt-60 mb-40">
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - VirgoDAO
-        </Link>
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - MESSIER OBJECT NFTS
-        </Link>
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - M87 TOKEN
-        </Link>{" "}
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - OPENHATCH
-        </Link>{" "}
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - HORIZON
-        </Link>{" "}
-        <Link
-          href="http://virgo.messier.app"
-          className=" text-sm font-thin uppercase tracking-tight text-white/50 sm:text-xl"
-        >
-          <span className=" mr-2">01</span> - ADASTRA
-        </Link>
-      </aside> */}
-
-      <ThemeSound />
+      <audio controls autoPlay className="hidden">
+        <source
+          src="https://testenv-virgo.messier.app/file/sound.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
     </main>
   );
 }

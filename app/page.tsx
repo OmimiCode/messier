@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import VelocityScroll from "@components/VelocityScroll";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Home() {
   const router = useRouter();
   // @ts-ignore
@@ -35,7 +36,7 @@ export default function Home() {
               restDelta: 0.001,
             },
           }}
-          className="mx-auto flex-shrink-0 lg:mx-0 max-w-4xl glassmorphic-w p-10 rounded-lg"
+          className="mx-auto flex-shrink-0 lg:mx-0 max-w-4xl glassmorphic-w px-10 py-20 rounded-lg"
         >
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-7xl">
             MESSIER ECOSYSTEM
@@ -45,19 +46,16 @@ export default function Home() {
             cryptocurrency transactions more secure, confidential, and viable.
           </p>
 
-          <div className="">
-            <h3 className="mt-10 uppercase text-lgfont-bold tracking-tight text-white sm:text-xl">
-              your journey starts here
-            </h3>
-
-            <button
-              onClick={() => {
-                router.push("/main");
-              }}
-              className="rounded-full text-black font-semibold bg-white sm:hover:bg-transparent sm:hover:text-white text-center mt-6 text-base uppercase border py-4 border-white/50  w-full sm:w-2/5 "
+          <p className="mt-10 uppercase text-lg font-bold tracking-tight text-white sm:text-xl">
+            your journey starts here
+          </p>
+          <div className="mt-10">
+            <Link
+              href="/main"
+              className="rounded-full text-black font-semibold bg-white sm:hover:bg-transparent sm:hover:text-white text-center mt-6 text-base uppercase border p-4 border-white/50  w-full sm:w-2/5 "
             >
               click enter to START
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

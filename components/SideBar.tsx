@@ -1,9 +1,8 @@
 "use client";
-import { Fragment, useState, useEffect, useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { AppContext } from "@context/AppContext";
-import { usePathname } from "next/navigation";
 
 const pages = [
   {
@@ -34,7 +33,6 @@ const pages = [
 
 function SideBar() {
   const { menuOpened, toggleMenu } = useContext(AppContext);
-  const pathname = usePathname();
 
   return (
     <aside className=" fixed top-2 z-50 ml-2 lg:ml-36 ">
@@ -91,7 +89,7 @@ function SideBar() {
                               <h3 className=" text-lg lg:text-2xl text-white/50  mb-6 sm:mb-10">
                                 MENU
                               </h3>
-                              <ul className="  flex flex-col gap-6 text-white">
+                              <ul className="flex flex-col gap-6 text-white">
                                 {pages.map((page, idx) => (
                                   <li key={idx}>
                                     <Link
