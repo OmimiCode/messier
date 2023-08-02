@@ -26,6 +26,7 @@ const contents = [
   {
     id: "virgo-dao",
     title: "VirgoDAO",
+    subHeader: "Messier's Trustless DAO",
     caption:
       "VIRGO (DAO) IS GOVERNED BY M87 STAKERS AND RUN ENTIRELY BY SMART CONTRACTS. TREASURY FUNDS ARE SPENT, TOKENS ARE PURCHASED, AND REWARDS ARE DISTRIBUTED USING SMART CONTRACTS. SINCE THERE ARE NO MIDDLEMEN INVOLVED WITH VIRGO, IT IS COMPLETELY TRUSTLESS.",
     link: "main/virgo-dao",
@@ -36,6 +37,7 @@ const contents = [
   {
     id: "objects-nfts",
     title: "Messier Objects NFTS",
+    subHeader: "Catalogue des Nébuleuse",
     caption:
       "THE ARTWORK OF THE NFTS CONTAINS AN ARTISTIC INTERPRETATION DEPICTING THE ASTRONOMER “CHARLES MESSIER” AND EACH NFTS CONTAINS ONE UNIQUE NEBULA OR STAR CLUSTER FROM THE 110“MESSIER OBJECTS” EMBEDDED INTO THEIR IMAGERY.",
     link: "main/messier-object-nfts",
@@ -46,6 +48,7 @@ const contents = [
   {
     id: "m87-token",
     title: "M87 TOKEN",
+    subHeader: "Messier Ecosystem Token",
     caption:
       "M87 IS THE ECOSYSTEM TOKEN THAT CAN BE TRADED IN THE OPEN MARKET, STAKED IN VIRGO TO EARN PASSIVE INCOME REWARDS, OR USED TO BID ON THE“MESSIER OBJECTS NFTS",
     link: "main/m87-token",
@@ -56,6 +59,7 @@ const contents = [
   {
     id: "open-hatch",
     title: "OPENHATCH",
+    subHeader: "P2P & B2B Transactions",
     caption:
       "OPEN HATCH CAN BE USED FOR PEER-TO-PEER TRANSACTIONS, FUNDRAISING, OR TRADING AND SERVICES. THE EXPLORER PLATFORM WITHIN OPEN HATCH EMERGES AS A SOCIAL MEDIA DAPP THAT CAN BE USED FOR CONNECTING WITH LIKE-MINDED INDIVIDUALS, SHARING CONTENT, AND CREATING ONLINE COMMUNITIES.",
     link: "main/open-hatch",
@@ -66,6 +70,7 @@ const contents = [
   {
     id: "horizon",
     title: "HORIZON",
+    subHeader: "Anonymous Transactions",
     caption:
       "A PRIVACY APPLICATION THAT ENABLES USERS TO DEPOSIT AND WITHDRAW CRYPTOCURRENCY WHILE MAINTAINING THEIR ANONYMITY. USERS ARE GIVEN THE CHOICE TO DISSOCIATE THEMSELVES FROM AN ANONYMITY SET THAT MAY INCLUDE STOLEN OR LAUNDERED FUNDS WHILE PRESERVING USER PRIVACY.",
     link: "main/horizon",
@@ -76,8 +81,9 @@ const contents = [
   {
     id: "adastra",
     title: "ADASTRA",
+    subHeader: "Elevate Your Crypto Voyage",
     caption:
-      "FACILITATE SECURE AND PRIVATE TRANSACTIONS USING CRYPTOCURRENCYSPEED, SECURITY, AND PRIVACY.",
+      "ADASTRA IS A COMPREHENSIVE SUITE OF TOOLS DESIGNED TO FACILITATE SECURE AND PRIVATE TRANSACTIONS USING CRYPTOCURRENCY, WE HAVE CRAFTED SOLUTIONS THAT COMBINE SPEED, SECURITY, AND PRIVACY.",
     link: "main/adastra",
     launch: "",
     action: "Get on Google Play",
@@ -129,6 +135,9 @@ function Content({ item }: { item: any }) {
           >
             {item?.title}
           </Link>
+          <p className="mt-2 text-xs sm:text-sm uppercase text-white  ">
+            {item?.subHeader}
+          </p>
           {/* @ts-ignore */}
           <motion.div style={{ y }} className="max-w-xl hidden sm:block ">
             <p className="mt-6 text-xs sm:text-sm uppercase text-white/50  ">
