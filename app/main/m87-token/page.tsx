@@ -7,7 +7,7 @@ export default function Layers() {
     <main>
       {/* m87 token */}
       <section className="relative isolate overflow-hidden min-h-screen bg-black">
-        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 sm:hover:opacity-100">
           <Image
             src={messier_logo}
             alt="logo"

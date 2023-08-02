@@ -7,7 +7,7 @@ export default function Layers() {
     <main>
       {/* OpenHatch */}
       <section className="relative isolate overflow-hidden min-h-screen bg-black">
-        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 sm:hover:opacity-100">
           <Image
             src={open_hatch_logo}
             alt="logo"
@@ -39,7 +39,7 @@ export default function Layers() {
           </div>
         </div>
       </section>
-      <audio controls autoPlay>
+      <audio controls autoPlay className="hidden">
         <source
           src="https://testenv-virgo.messier.app/file/sound.mp3"
           type="audio/mpeg"

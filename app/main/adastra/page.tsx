@@ -6,7 +6,7 @@ export default function Layers() {
     <main>
       {/* ADASTRA */}
       <section className="relative isolate overflow-hidden min-h-screen bg-black">
-        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 sm:hover:opacity-100">
           <Image
             src={adastra_logo}
             alt="logo"

@@ -7,7 +7,7 @@ export default function Virgo() {
     <main>
       {/* Virgo DAO */}
       <section className=" relative isolate overflow-hidden min-h-screen bg-transparent">
-        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 hover:opacity-100">
+        <div className="absolute inset-y-0 -left-[50%] spin opacity-10 sm:hover:opacity-100">
           <Image
             src={virgodao_logo}
             alt="logo"
