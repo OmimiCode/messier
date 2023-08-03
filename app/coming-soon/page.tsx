@@ -71,10 +71,10 @@ export default function VelocityScroll() {
   const { playClick } = useContext(AppContext);
   return (
     <section className="relative py-32 lg:py-40 flex flex-col items-center justify-center gap-10 min-h-screen">
-      <ParallaxText baseVelocity={10}>OPPS...</ParallaxText>
-      <ParallaxText baseVelocity={-10}>404!</ParallaxText>
+      <ParallaxText baseVelocity={5}>PLEASE HOLD...</ParallaxText>
+      <ParallaxText baseVelocity={-5}>COMING SOON!</ParallaxText>
       <p className="mt-10 text-xs sm:text-sm uppercase tracking-widest text-white  ">
-        You are approaching black hole
+        we are activitely working on it
       </p>
       <Link
         onClick={playClick}

@@ -30,7 +30,8 @@ const contents = [
     caption:
       "VIRGO (DAO) IS GOVERNED BY M87 STAKERS AND RUN ENTIRELY BY SMART CONTRACTS. TREASURY FUNDS ARE SPENT, TOKENS ARE PURCHASED, AND REWARDS ARE DISTRIBUTED USING SMART CONTRACTS. SINCE THERE ARE NO MIDDLEMEN INVOLVED WITH VIRGO, IT IS COMPLETELY TRUSTLESS.",
     link: "main/virgo-dao",
-    launch: "https://virgo.messier.app",
+    // launch: "https://virgo.messier.app",
+    launch: "/coming-soon",
     action: "Launch Virgo",
     logo: virgodao_logo,
   },
@@ -41,7 +42,8 @@ const contents = [
     caption:
       "THE ARTWORK OF THE NFTS CONTAINS AN ARTISTIC INTERPRETATION DEPICTING THE ASTRONOMER “CHARLES MESSIER” AND EACH NFTS CONTAINS ONE UNIQUE NEBULA OR STAR CLUSTER FROM THE 110“MESSIER OBJECTS” EMBEDDED INTO THEIR IMAGERY.",
     link: "main/messier-object-nfts",
-    launch: "https://virgo.messier.app/nfts",
+    // launch: "https://virgo.messier.app/nfts",
+    launch: "/coming-soon",
     action: "Launch NFT Platform",
     logo: messier_logo,
   },
@@ -52,7 +54,7 @@ const contents = [
     caption:
       "M87 IS THE ECOSYSTEM TOKEN THAT CAN BE TRADED IN THE OPEN MARKET, STAKED IN VIRGO TO EARN PASSIVE INCOME REWARDS, OR USED TO BID ON THE“MESSIER OBJECTS NFTS",
     link: "main/m87-token",
-    launch: "",
+    launch: "/coming-soon",
     action: "Buy M87",
     logo: messier_logo,
   },
@@ -63,7 +65,8 @@ const contents = [
     caption:
       "OPEN HATCH CAN BE USED FOR PEER-TO-PEER TRANSACTIONS, FUNDRAISING, OR TRADING AND SERVICES. THE EXPLORER PLATFORM WITHIN OPEN HATCH EMERGES AS A SOCIAL MEDIA DAPP THAT CAN BE USED FOR CONNECTING WITH LIKE-MINDED INDIVIDUALS, SHARING CONTENT, AND CREATING ONLINE COMMUNITIES.",
     link: "main/open-hatch",
-    launch: "https://openhatch.messier.app",
+    // launch: "https://openhatch.messier.app",
+    launch: "/coming-soon",
     action: "Launch dApp",
     logo: openhatch_logo,
   },
@@ -74,7 +77,8 @@ const contents = [
     caption:
       "A PRIVACY APPLICATION THAT ENABLES USERS TO DEPOSIT AND WITHDRAW CRYPTOCURRENCY WHILE MAINTAINING THEIR ANONYMITY. USERS ARE GIVEN THE CHOICE TO DISSOCIATE THEMSELVES FROM AN ANONYMITY SET THAT MAY INCLUDE STOLEN OR LAUNDERED FUNDS WHILE PRESERVING USER PRIVACY.",
     link: "main/horizon",
-    launch: "https://horizon.messier.app",
+    // launch: "https://horizon.messier.app",
+    launch: "/coming-soon",
     action: "Launch dApp",
     logo: horizon_logo,
   },
@@ -85,7 +89,7 @@ const contents = [
     caption:
       "ADASTRA IS A COMPREHENSIVE SUITE OF TOOLS DESIGNED TO FACILITATE SECURE AND PRIVATE TRANSACTIONS USING CRYPTOCURRENCY, WE HAVE CRAFTED SOLUTIONS THAT COMBINE SPEED, SECURITY, AND PRIVACY.",
     link: "main/adastra",
-    launch: "",
+    launch: "/coming-soon",
     action: "Get on Google Play",
     logo: adastra_logo,
   },
