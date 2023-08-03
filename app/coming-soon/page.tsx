@@ -74,7 +74,7 @@ export default function VelocityScroll() {
       <ParallaxText baseVelocity={5}>PLEASE HOLD...</ParallaxText>
       <ParallaxText baseVelocity={-5}>COMING SOON!</ParallaxText>
       <p className="mt-10 text-xs sm:text-sm uppercase tracking-widest text-white  ">
-        we are activitely working on it
+        we are actively working on it
       </p>
       <Link
         onClick={playClick}
